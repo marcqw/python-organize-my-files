@@ -1,19 +1,14 @@
 import os
 import shutil
 import argparse
+import json
 
-def sort_files(source_directory):
-    target_directories = {
-        'Images': ['.png', '.jpg', '.jpeg', '.gif', '.tiff', '.bmp'],
-        'Documents': ['.doc', '.docx', '.pdf', '.txt', '.rtf', '.ppt', '.pptx', '.pdf'],
-        'Excel': ['.xls', '.xlsx', '.csv'],
-        'Zip': ['.zip'],
-        'Sounds': ['.wav', '.mp3', '.amr'],
-        'Videos': ['.mp4', '.mkv', '.avi'],
-        'GP': ['.gpx', '.gp5', '.gp4'],
-        #'': ['.'],
-        # Add other file types and target folders as needed.
-    }
+def load_config(config_file):
+    with open(config_file, 'r') as f:
+        return json.load(f)
+
+def sort_files(source_directory, config_file):
+    target_directories = load_config(config_file)
 
     # Create subdirectories if they do not already exist
     for directory in target_directories.keys():
@@ -38,6 +33,7 @@ def sort_files(source_directory):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Sort files in a directory based on their type.')
     parser.add_argument('directory', type=str, help='The path to the directory to sort.')
+    parser.add_argument('config', type=str, help='The path to the configuration file.')
     
     args = parser.parse_args()
-    sort_files(args.directory)
+    sort_files(args.directory, args.config)

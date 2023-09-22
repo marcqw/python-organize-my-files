@@ -1,0 +1,9 @@
+{
+    "Images": [".png", ".jpg", ".jpeg", ".gif", ".tiff", ".bmp"],
+    "Documents": [".doc", ".docx", ".pdf", ".txt", ".rtf", ".ppt", ".pptx"],
+    "Excel": [".xls", ".xlsx", ".csv"],
+    "Zip": [".zip"],
+    "Sounds": [".wav", ".mp3", ".amr"],
+    "Videos": [".mp4", ".mkv", ".avi"],
+    "GP": [".gpx", ".gp5", ".gp4"]
+}
