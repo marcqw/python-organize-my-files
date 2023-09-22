@@ -9,12 +9,15 @@ def load_config(config_file):
 
 def sort_files(source_directory, config_file):
     target_directories = load_config(config_file)
-
+    
     # Create subdirectories if they do not already exist
     for directory in target_directories.keys():
         directory_path = os.path.join(source_directory, directory)
         os.makedirs(directory_path, exist_ok=True)
 
+    total_files = sum([len(files) for _, _, files in os.walk(source_directory)])
+    processed_files = 0
+    
     # Go through all the files in the source directory and move them to the appropriate folders
     for file in os.listdir(source_directory):
         file_path = os.path.join(source_directory, file)
@@ -27,6 +30,9 @@ def sort_files(source_directory, config_file):
                     target_path = os.path.join(source_directory, directory, file)
                     shutil.move(file_path, target_path)
                     break
+            
+            processed_files += 1
+            print(f"Processing... {processed_files / total_files * 100:.2f}% completed")
 
     print("Sorting completed.")
 
