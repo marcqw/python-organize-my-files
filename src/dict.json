@@ -1,9 +1,10 @@
 {
-    "Images": [".png", ".jpg", ".jpeg", ".gif", ".tiff", ".bmp"],
-    "Documents": [".doc", ".docx", ".pdf", ".txt", ".rtf", ".ppt", ".pptx"],
+    "Images": [".png", ".jpg", ".jpeg", ".gif", ".tiff", ".bmp", ".svg"],
+    "Documents": [".doc", ".docx", ".pdf", ".txt", ".rtf", ".ppt", ".pptx", ".PDF"],
     "Excel": [".xls", ".xlsx", ".csv"],
-    "Zip": [".zip"],
+    "Zip": [".zip", ".rar"],
     "Sounds": [".wav", ".mp3", ".amr"],
     "Videos": [".mp4", ".mkv", ".avi"],
-    "GP": [".gpx", ".gp5", ".gp4"]
+    "GP": [".gpx", ".gp5", ".gp4", ".mid"],
+    "Camunda": [".bpmn"]
 }
